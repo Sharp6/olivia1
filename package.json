@@ -1,0 +1,33 @@
+{
+  "name": "olivia1",
+  "version": "1.0.0",
+  "description": "An app to track the birthday gifts for Olivia's first birthday",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Olivia",
+    "birthday"
+  ],
+  "author": "Philip Huysmans",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "browser-sync": "^2.9.11",
+    "browserify": "^11.2.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "guid": "0.0.12",
+    "gulp": "^3.9.0",
+    "gulp-live-server": "0.0.29",
+    "jquery": "^2.1.4",
+    "mongoose": "*",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

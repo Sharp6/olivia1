@@ -1,0 +1,19 @@
+{
+  "name": "Olivia1",
+  "version": "1.0.0",
+  "authors": [
+    "Philip Huysmans <philip.huysmans@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.0",
+    "skeleton": "~2.0.4"
+  }
+}
