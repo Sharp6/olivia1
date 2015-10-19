@@ -13,7 +13,7 @@ module.exports = function(myRouter) {
 			console.log("Adding item", item);
 			var giftItem = new GiftItem(item);
 			giftItem.save(function(err,doc) {
-				res.status(300).send();
+				res.status(201).send(doc);
 			});
 		});
 

@@ -17,10 +17,14 @@ function GiftItemStore() {
 	}
 
 	function addGiftItem(item) {
-		items.push(item);
-		triggerListeners();
-
-		helper.post('/api/items', item);
+		helper.post('/api/items', item)
+		.then(function(newItem){
+			items.push(item);
+			triggerListeners();	
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
 	}
 
 	function deleteGiftItem(item) {
