@@ -8,24 +8,30 @@ var LocalStrategy = require('passport-local').Strategy;
 var app = new express();
 var db = require('./database.js');
 
-var myRouter = express.Router();
+var User = require('./models/User.server.model.js');
+var oRouter = express.Router();
 
 
-app.use(passport.initialize());
-app.use(passport.session());
-passport.serializeUser(function(user, done) {  // Places a user in the session
-  done(null,user);
-}); 
-passport.deserializeUser(function(user, done) {
-  done(null,user);
-});
-
+// SETUP ===============================================================================
 app
+.use(express.cookieParser())
 .use(parser.json())
 .use(parser.urlencoded({extended: false}))
 .use(express.static(__dirname + '/../.tmp/'))
+.use(express.session({ secret: 'olivia' }));
+
+require('./config/passport.js')(app,passport,LocalStrategy,session,User);
+
+// ROUTES ===============================================================================
+oRouter = require('./routes/main.routes.server.js')(oRouter);
+oRouter = require('./routes/items.js')(oRouter);
+
+app
 .get('/', function(req,res) {
 	res.render('./../app/index.ejs', {});
 })
-.use(require('./routes/items.js')(myRouter))
+.use(oRouter);
+
+// RUNNER ===============================================================================
+app
 .listen(3131);
